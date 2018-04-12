@@ -1,4 +1,4 @@
-query Hi($test: String) {
+query GET_STARSHIP($test: String) {
   Starship(name: $test) {
     name
     hyperdriveRating
