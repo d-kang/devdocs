@@ -1,0 +1,13 @@
+query Hi($test: String) {
+  Starship(name: $test) {
+    name
+    hyperdriveRating
+    pilots(orderBy: height_DESC) {
+      name
+      height
+      homeworld {
+        name
+      }
+    }
+  }
+}

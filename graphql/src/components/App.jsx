@@ -5,6 +5,7 @@ import img__arguments from '../assets/arguments.jpg';
 import img__alias from '../assets/alias.jpg';
 import img__fragments from '../assets/fragments.jpg';
 import img__variables from '../assets/variables.jpg';
+import HelloGraphql from './HelloGraphql';
 
 class App extends Component {
   render() {
@@ -83,20 +84,21 @@ class App extends Component {
           <p>
             Up until now, we have been using a shorthand syntax where we omit
             both the query keyword and the query name.
-            <div className="quote">
-              <p>
-                You'll need to add these optional parts to a GraphQL operation
-                if you want to
-              </p>
-              <ul>
-                <li>1. execute something other than a query </li>
-                <li>2. pass dynamic variables</li>
-              </ul>
-            </div>
+          </p>
+
+          <div className="quote">
             <p>
-              Here’s an example that includes the keyword query as operation
-              type and HeroNameAndFriends as operation name:
+              You'll need to add these optional parts to a GraphQL operation if
+              you want to
             </p>
+            <ul>
+              <li>1. execute something other than a query </li>
+              <li>2. pass dynamic variables</li>
+            </ul>
+          </div>
+          <p>
+            Here’s an example that includes the keyword query as operation type
+            and HeroNameAndFriends as operation name:
           </p>
           <pre className="prettyprint">
             {`query HeroNameAndFriends {
@@ -108,17 +110,15 @@ class App extends Component {
   }
 }`}
           </pre>
-          <p>
-            <div className="quote">
-              <h4>Operation types</h4>
-              <ul>
-                <li>1. query</li>
-                <li>2. mutation</li>
-                <li>3. subscription</li>
-              </ul>
-              <p>Describes what type of operation you're intending to do.</p>
-            </div>
-          </p>
+          <div className="quote">
+            <h4>Operation types</h4>
+            <ul>
+              <li>1. query</li>
+              <li>2. mutation</li>
+              <li>3. subscription</li>
+            </ul>
+            <p>Describes what type of operation you're intending to do.</p>
+          </div>
           <p>
             The operation name a.k.a. GraphQL query and mutation names, along
             with fragment names, can be a useful debugging tool on the server
@@ -137,21 +137,21 @@ class App extends Component {
           <div className="quote">
             <p>
               When we start working with variables, we need to do three things:
-              <ul>
-                <li>
-                  1. Declare <code>$variableName</code> as one of the variables
-                  accepted by the query
-                </li>
-                <li>
-                  2. Replace the static value in the query with{' '}
-                  <code>$variableName</code>
-                </li>
-                <li>
-                  3. Pass <code>variableName: value</code> in the separate,
-                  transport-specific (usually JSON) variables dictionary
-                </li>
-              </ul>
             </p>
+            <ul>
+              <li>
+                1. Declare <code>$variableName</code> as one of the variables
+                accepted by the query
+              </li>
+              <li>
+                2. Replace the static value in the query with{' '}
+                <code>$variableName</code>
+              </li>
+              <li>
+                3. Pass <code>variableName: value</code> in the separate,
+                transport-specific (usually JSON) variables dictionary
+              </li>
+            </ul>
           </div>
           <p>Here's what it looks like all together:</p>
           <pre className="prettyprint">
@@ -247,6 +247,7 @@ class App extends Component {
   "withFriends": true
 }
 `}</pre>
+          <br />
           <div className="quote">
             <ul>
               <li>
@@ -265,8 +266,25 @@ class App extends Component {
             fields in your query. Server implementations may also add
             experimental features by defining completely new directives.
           </p>
-          <h4>h. Mutations: the action or process of mutating.</h4>
+          <h4>h. Mutations</h4>
+          <p>Updating or adding i.e. post put</p>
+          <p>A mutation can contain multiple fields, just like a query.</p>
+          <p>
+            {' '}
+            If we send two incrementCredits mutations in one request, the first
+            is guaranteed to finish before the second begins
+          </p>
           <h4>i. Inline Fragments</h4>
+          <p>
+            If you are querying a field that returns an interface or a union
+            type, you will need to use inline fragments to access data on the
+            underlying concrete type.
+          </p>
+          <p>
+            To ask for a field on the concrete type, you need to use an inline
+            fragment with a type condition.{' '}
+          </p>
+
           <h2>3. Schemas and Types</h2>
           <h4>a. Type System</h4>
           <h4>b. Type Language</h4>
