@@ -1,5 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+html//Code Hues
+$hue-1: #b3ccff;
+$hue-1-2: #cc7bc2;
+
+$hue-2: #85fff5;
+$hue-2-2: #32b3a0;
+
+$hue-3: #ff8a75; // number, class
+
+$hue-4: #ffe085;
+$hue-4-2: #fbb23c;
+
+$hue-5: #e85e81;
+$hue-5-2: #f65a5a;
+
+$hue-6: #b3d255;
+
+// Blues
+$blue-1: #51b2db;
+
+$blue-2: #203f55;
+$blue-2-2: #152a38;
+
+$blue-3: #344450;
+$blue-3-2: #253946;
+
+// Greys
+$grey1: #e9ebeb;
+$grey2: #d5d6d7;
+$grey3: #bebfc1;
+$grey4: #949699;
+$grey5: #3e3e41;
+$grey6: #2d2d2f;
+
 html,
 body {
   margin: 0;

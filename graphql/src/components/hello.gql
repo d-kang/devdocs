@@ -1,13 +1,37 @@
-query GET_STARSHIP($test: String) {
-  Starship(name: $test) {
+# query GET_STARSHIP($test: String) {
+#   Starship(name: $test) {
+#     name
+#     hyperdriveRating
+#     pilots(orderBy: height_DESC) {
+#       name
+#       height
+#       homeworld {
+#         name
+#       }
+#     }
+#   }
+# }
+query GET_STARSHIP {
+  # __schema {
+  #   types {
+  #     kind
+  #     name
+  #     description
+  #   }
+  # }
+
+  __type(name: "Film") {
     name
-    hyperdriveRating
-    pilots(orderBy: height_DESC) {
+    kind
+    fields {
       name
-      height
-      homeworld {
+      type {
         name
+        kind
       }
     }
   }
+  # __type(name: "Film") {
+  #   name
+  # }
 }
